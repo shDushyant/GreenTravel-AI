@@ -1,0 +1,4 @@
+Date,Route,Prediction,Probability
+08-07-2026 00:53,new delhi_belgium,🟢 Low Carbon Trip,0.02
+08-07-2026 00:57,delhi_london,🔴 High Carbon Trip,80.02
+08-07-2026 01:12,delhi_london,🔴 High Carbon Trip,52.42

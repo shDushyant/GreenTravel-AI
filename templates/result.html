@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌿 GreenTravel AI</h1>
+
+    <p class="subtitle">
+
+        Carbon Footprint Prediction Result
+
+    </p>
+
+    {% if "High" in prediction %}
+
+    <div class="status high">
+
+        {{ prediction }}
+
+    </div>
+
+    {% else %}
+
+    <div class="status low">
+
+        {{ prediction }}
+
+    </div>
+
+    {% endif %}
+
+    <hr>
+
+    <h2 style="text-align:center;">
+
+        Carbon Risk Score
+
+    </h2>
+
+    <div class="progress-container">
+
+        {% if probability >= 70 %}
+
+        <div class="progress-bar"
+             style="width:{{ probability }}%; background:#dc3545;">
+
+        </div>
+
+        {% elif probability >= 40 %}
+
+        <div class="progress-bar"
+             style="width:{{ probability }}%; background:#fd7e14;">
+
+        </div>
+
+        {% else %}
+
+        <div class="progress-bar"
+             style="width:{{ probability }}%; background:#198754;">
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <h1 style="text-align:center;
+               margin-top:20px;
+               color:#198754;">
+
+        {{ probability }} %
+
+    </h1>
+
+    <div class="card">
+
+        <h2>
+
+            🌱 Sustainability Recommendations
+
+        </h2>
+
+        <br>
+
+        <ul>
+
+        {% for item in recommendations %}
+
+            <li>
+
+                ✅ {{ item }}
+
+            </li>
+
+        {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <h2>
+
+            📊 Risk Interpretation
+
+        </h2>
+
+        <br>
+
+        {% if probability >= 70 %}
+
+        <p>
+
+            <strong style="color:#dc3545;">
+
+            High Carbon Risk
+
+            </strong>
+
+            <br><br>
+
+            This trip is expected to produce a relatively high carbon footprint.
+            Consider selecting lower-emission transport options and reducing
+            unnecessary travel where possible.
+
+        </p>
+
+        {% elif probability >= 40 %}
+
+        <p>
+
+            <strong style="color:#fd7e14;">
+
+            Moderate Carbon Risk
+
+            </strong>
+
+            <br><br>
+
+            This trip has a moderate environmental impact.
+            Small changes in transport or accommodation may reduce emissions.
+
+        </p>
+
+        {% else %}
+
+        <p>
+
+            <strong style="color:#198754;">
+
+            Low Carbon Risk
+
+            </strong>
+
+            <br><br>
+
+            Great! This trip is comparatively eco-friendly.
+            Continue following sustainable travel practices.
+
+        </p>
+
+        {% endif %}
+
+    </div>
+
+    <br>
+
+    <a href="/">
+
+        <button>
+
+            🔄 Predict Another Trip
+            
+        </button>
+        
+        
+
+    </a>
+    <br><br>
+
+    <a href="/dashboard">
+
+        <button>
+
+            📊 Analytics Dashboard
+
+        </button>
+
+    </a>
+
+    <div class="footer">
+
+        GreenTravel AI • Machine Learning Powered
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

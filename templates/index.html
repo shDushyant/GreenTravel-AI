@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenTravel AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌿 GreenTravel AI</h1>
+
+    <p class="subtitle">
+
+        AI Powered Carbon Footprint Predictor
+
+        <br><br>
+
+        Plan Smarter • Travel Greener
+
+    </p>
+
+    <!-- Dashboard Cards -->
+
+    <div class="dashboard">
+
+        <div class="dash-card">
+
+            <h2>🤖</h2>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+
+                Uses a trained ML model to estimate carbon impact.
+
+            </p>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h2>⚡</h2>
+
+            <h3>Instant Prediction</h3>
+
+            <p>
+
+                Predict your trip's carbon risk within seconds.
+
+            </p>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h2>🌱</h2>
+
+            <h3>Eco Friendly</h3>
+
+            <p>
+
+                Get sustainable travel recommendations.
+
+            </p>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h2>📊</h2>
+
+            <h3>Business Analytics</h3>
+
+            <p>
+
+                Designed for business travel planning.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2 style="text-align:center;">
+
+        Trip Details
+
+    </h2>
+
+    <form action="/predict" method="POST">
+
+        <div class="grid">
+
+            <div class="input-box">
+
+                <label>🌍 Departure Country</label>
+
+                <input type="text"
+                       name="DepartureLocationCountry"
+                       required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🏙️ Departure City</label>
+
+                <input type="text"
+                       name="DepartureLocationCity"
+                       required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🌎 Arrival Country</label>
+
+                <input type="text"
+                       name="ArrivalLocationCountry"
+                       required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>📍 Arrival City</label>
+
+                <input type="text"
+                       name="ArrivalLocationCity"
+                       required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🚆 Transport Mode</label>
+
+                <select
+                name="ShippingTypeDescription"
+                required>
+
+                    <option value="">Select</option>
+
+                    <option>Train</option>
+
+                    <option>Economy Flight</option>
+
+                    <option>First Class Flight</option>
+
+                    <option>Business Class Flight</option>
+
+                    <option>BMW 3 diesel</option>
+
+                    <option>Volkswagen Golf diesel</option>
+
+                    <option>Volkswagen Golf petrol</option>
+
+                    <option>BMW 3 plugin hybrid</option>
+
+                    <option>Fiat 500 electric</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🎯 Purpose</label>
+
+                <select
+                name="Purpose"
+                required>
+
+                    <option value="">Select</option>
+
+                    <option>Customer Visit</option>
+
+                    <option>Conference/Exhibition</option>
+
+                    <option>Internal Business Trip</option>
+
+                    <option>Enablement</option>
+
+                    <option>Partner Visit</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🏢 Business Unit</label>
+
+                <select
+                name="BusinessUnit"
+                required>
+
+                    <option value="">Select</option>
+
+                    <option>Services</option>
+
+                    <option>Sales</option>
+
+                    <option>Executive Management</option>
+
+                    <option>Marketing</option>
+
+                    <option>Ecosystem</option>
+
+                    <option>Finance</option>
+
+                    <option>Customer Support</option>
+
+                    <option>Operations</option>
+
+                    <option>Office Management</option>
+
+                    <option>Legal</option>
+
+                    <option>Value Engineering</option>
+
+                    <option>Product Management</option>
+
+                    <option>Engineering</option>
+
+                    <option>Sustainability</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🏛️ Entity Code</label>
+
+                <select
+                name="EntitiyCode"
+                required>
+
+                    <option value="">Select</option>
+
+                    <option value="6000">6000</option>
+
+                    <option value="7000">7000</option>
+
+                    <option value="8000">8000</option>
+
+                    <option value="9000">9000</option>
+
+                    <option value="10000">10000</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>📑 Out Of Policy</label>
+
+                <select
+                name="OutOfPolicy"
+                required>
+
+                    <option>No</option>
+
+                    <option>Yes</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🏨 Hotel Nights</label>
+
+                <input type="number"
+                       min="0"
+                       name="HotelNights"
+                       required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>💰 Net Cost</label>
+
+                <input type="number"
+                       step="0.01"
+                       min="0"
+                       name="NetCosts"
+                       required>
+
+            </div>
+
+        </div>
+
+        <button type="submit">
+
+            🚀 Predict Carbon Risk
+
+        </button>
+
+    </form>
+
+    <div class="footer">
+
+        <br>
+
+        <a href="/about">
+
+            About This Project
+
+        </a>
+
+        <br><br>
+
+        Built using Flask • Scikit-learn • HTML • CSS • JavaScript
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

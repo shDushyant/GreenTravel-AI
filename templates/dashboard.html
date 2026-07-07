@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analytics Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Analytics Dashboard</h1>
+
+<p class="subtitle">
+
+Business Travel Analytics
+
+</p>
+
+<div class="dashboard">
+
+<div class="dash-card">
+
+<h2>{{ total }}</h2>
+
+<p>Total Predictions</p>
+
+</div>
+
+<div class="dash-card">
+
+<h2>{{ high }}</h2>
+
+<p>High Carbon Trips</p>
+
+</div>
+
+<div class="dash-card">
+
+<h2>{{ low }}</h2>
+
+<p>Low Carbon Trips</p>
+
+</div>
+
+<div class="dash-card">
+
+<h2>{{ average }}%</h2>
+
+<p>Average Carbon Risk</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<h2>
+
+Recent Predictions
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Route</th>
+
+<th>Prediction</th>
+
+<th>Probability</th>
+
+</tr>
+
+{% for row in tables %}
+
+<tr>
+
+<td>{{ row.Route }}</td>
+
+<td>{{ row.Prediction }}</td>
+
+<td>{{ row.Probability }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">
+
+<button>
+
+🏠 Back Home
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

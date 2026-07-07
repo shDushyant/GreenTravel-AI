@@ -1,0 +1,61 @@
+GreenTravel Predictor
+
+
+---------------------------------------
+ GreenTravel Predictor
+
+Departure Country : [________]
+
+Arrival Country   : [________]
+
+Departure City    : [________]
+
+Arrival City      : [________]
+
+Shipping Type     : [________]
+
+Purpose           : [________]
+
+Business Unit     : [________]
+
+Hotel Nights      : [________]
+
+Net Cost          : [________]
+
+Out Of Policy     : [Yes/No]
+
+           [ Predict ]
+
+------------------------------
+
+Prediction
+
+High Carbon Probability
+
+83.6 %
+
+🔴 High Carbon
+---------------------------------------
+
+
+
+
+
+
+
+
+ stages:
+Part 1
+   Create project folder
+
+Part 2
+   HTML
+
+Part 3
+   CSS
+
+Part 4
+   Flask Backend
+
+Part 5
+Connect ML Model
