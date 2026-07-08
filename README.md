@@ -210,28 +210,6 @@ Carbon Risk Classification
 Recommendations & Insights
 ```
 
----
-
-# 📷 Application Preview
-
-## Home Page
-
-*(Add Screenshot)*
-
----
-
-## Prediction Result
-
-*(Add Screenshot)*
-
----
-
-## Analytics Dashboard
-
-*(Add Screenshot)*
-
----
-
 # 📂 Project Structure
 
 ```
